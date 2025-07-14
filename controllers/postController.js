@@ -13,7 +13,6 @@ exports.createPost = async (req,res) => {
         //save the post to database
         const savedPost = await createPost.save();
 
-
         //return success response
         res.json({
             post: savedPost, 
@@ -27,12 +26,14 @@ exports.createPost = async (req,res) => {
     }
 }
 
+
+
 exports.getAllPosts = async(req,res) => {
     try{
         const posts = await Post.find()
-            .populate("likes")
-            .populate("comments")
-            .exec()
+            // .populate("likes")
+               .populate("comments")
+            // .exec()
 
         res.json({ posts })
     }
