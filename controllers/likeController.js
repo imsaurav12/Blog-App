@@ -28,8 +28,8 @@ exports.likePost = async (req,res) => {
         }
     }
 
-    // Unlike the Post
-    exports.unlikePost = async (req,res) => {
+// Unlike the Post
+exports.unlikePost = async (req,res) => {
         try{
             const{ post, like} = req.body;
 
@@ -57,4 +57,4 @@ exports.likePost = async (req,res) => {
                 error: "Error while unliking post",
             });
         }
-    }
+}
